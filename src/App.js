@@ -5,6 +5,7 @@ import { Department } from "./Pages/Department";
 import { Product } from "./Pages/Product";
 import { HomePage } from "./Pages/HomePage";
 import { DepartmentProduct } from "./Pages/DeparmentProduct";
+import { ProductDetail } from "./Pages/ProductDetail";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           path="/product/:departmentName"
           element={<DepartmentProduct />}
         />
+        <Route path="/productDetail/:productName" element={<ProductDetail />} />
       </Routes>
     </div>
   );

@@ -6,13 +6,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { useInventory } from "../Context/inventoryContext";
+import { useNavigate } from "react-router-dom";
 
 export const ProductMain = () => {
-  const { filteredProducts, inventoryStates } = useInventory();
-  console.log(
-    "🚀 ~ file: ProductMain.jsx:12 ~ ProductMain ~ inventoryStates:",
-    inventoryStates
-  );
+  const { filteredProducts } = useInventory();
+  const navigate = useNavigate();
 
   return (
     <Box>
@@ -34,7 +32,11 @@ export const ProductMain = () => {
                 <TableCell>
                   <img src={data.imageUrl} alt="imageurl" width="80px" />
                 </TableCell>
-                <TableCell>{data.name}</TableCell>
+                <TableCell
+                  onClick={() => navigate(`/productDetail/${data.name}`)}
+                >
+                  {data.name}
+                </TableCell>
                 <TableCell>{data.description}</TableCell>
                 <TableCell>{data.price}</TableCell>
                 <TableCell>{data.stock}</TableCell>
