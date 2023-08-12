@@ -1,8 +1,7 @@
-import { LandingPage } from "../Components/LandingPage";
-import { SideBar } from "../Components/SideBar";
 import Box from "@mui/material/Box";
-
-export const HomePage = () => {
+import { SideBar } from "../Components/SideBar";
+import { Departmentcard } from "../Components/Departmentcard";
+export const Department = () => {
   return (
     <Box
       sx={{
@@ -11,7 +10,7 @@ export const HomePage = () => {
       }}
     >
       <SideBar />
-      <LandingPage />
+      <Departmentcard />
     </Box>
   );
 };
